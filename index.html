@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Article Page</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;color:#111}
+    body{margin:0;padding:0;background:#f7f7fb}
+    a{color:inherit}
+    .container{max-width:900px;margin:1.5rem auto;padding:1rem}
+    header{background:#fff;padding:.75rem 1rem;border-bottom:1px solid #e6e6ee}
+    .branding{display:flex;gap:.75rem;align-items:center}
+    .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#6b5b95,#feb236);display:inline-block}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.5rem}
+    nav a{display:inline-block;padding:.5rem .6rem;border-radius:6px;text-decoration:none}
+    nav a:focus{outline:3px solid Highlight}
+    .meta{font-size:.9rem;color:#555}
+    main{display:grid;grid-template-columns:1fr 300px;gap:1.25rem;padding:1rem}
+    article{background:#fff;padding:1rem;border-radius:10px;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+    aside{background:#fff;padding:1rem;border-radius:10px;height:fit-content}
+    figure img{max-width:100%;height:auto;border-radius:8px}
+    footer.page-footer{background:#fff;padding:1rem;border-top:1px solid #e6e6ee;text-align:center}
+    @media (max-width:880px){main{grid-template-columns:1fr}aside{order:2}}
+    /* skip link */
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:static;width:auto;height:auto;margin:.5rem;clip:auto}
+  </style>
+</head>
+<body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Page header landmark -->
+  <header role="banner" class="container">
+    <div class="branding">
+      <span class="logo" aria-hidden="true"></span>
+      <div>
+        <h1 style="margin:.15rem 0">The Lagos Early Learning Review</h1>
+        <p class="meta">News & analysis — <time datetime="2025-10-02">October 2, 2025</time></p>
+      </div>
+    </div>
+
+    <!-- Primary navigation landmark -->
+    <nav role="navigation" aria-label="Primary navigation" style="margin-top:.75rem">
+      <ul>
+        <li><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Research</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main landmark -->
+  <main id="main-content" class="container" role="main">
+
+    <!-- Article landmark -->
+    <article aria-labelledby="article-title">
+      <header>
+        <h2 id="article-title">Bridging the Gap: Early Childhood Education in Lagos</h2>
+        <p class="meta">By <a href="#author" id="byline">Chinaza Onuoha</a> • <time datetime="2025-09-30">September 30, 2025</time></p>
+      </header>
+
+      <figure>
+        <img src="https://via.placeholder.com/900x400" alt="Children in a bright classroom"/>
+        <figcaption>Students at playtime in a Lagos early childhood classroom.</figcaption>
+      </figure>
+
+      <section aria-labelledby="problem">
+        <h3 id="problem">The problem: low investment and uneven outcomes</h3>
+        <p>Early childhood education (ECE) in Lagos faces underinvestment, inconsistent teacher training, and infrastructure gaps that limit learning outcomes for the youngest learners. These structural issues compound across neighborhoods and socio-economic groups.</p>
+      </section>
+
+      <section aria-labelledby="solution">
+        <h3 id="solution">A layered solution</h3>
+        <p>A combination of policy advocacy, community partnerships, and low-cost tech-enabled teacher supports can raise classroom quality at scale. Below are key components:</p>
+        <ul>
+          <li>Targeted teacher coaching and micro-credentials.</li>
+          <li>Simple, low-bandwidth digital resources for lesson planning.</li>
+          <li>Community-led monitoring & transparent funding channels.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="evidence">
+        <h3 id="evidence">Evidence & pilot data</h3>
+        <p>Small pilot programs show measurable gains in engagement and foundational literacy after 6 months. Scaling requires coordinated funding and continuous evaluation.</p>
+      </section>
+
+      <footer>
+        <p>Published under a Creative Commons licence. For permissions, contact the editorial team.</p>
+      </footer>
+    </article>
+
+    <!-- Complementary content / aside landmark -->
+    <aside aria-labelledby="related" role="complementary">
+      <h4 id="related">Related</h4>
+      <ul>
+        <li><a href="#">Pilot program results — 2025 summary</a></li>
+        <li><a href="#">How to run low-cost assessments</a></li>
+        <li><a href="#">Funding opportunities for ECE in Nigeria</a></li>
+      </ul>
+
+      <section aria-labelledby="subscribe" style="margin-top:1rem">
+        <h5 id="subscribe">Subscribe</h5>
+        <form action="#" method="post">
+          <label for="email">Email</label><br>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required style="width:100%;padding:.5rem;margin-top:.25rem;border-radius:6px;border:1px solid #ddd">
+          <button type="submit" style="margin-top:.5rem;padding:.5rem .75rem;border-radius:6px;border:0;cursor:pointer">Subscribe</button>
+        </form>
+      </section>
+    </aside>
+
+  </main>
+
+  <!-- Site footer landmark -->
+  <footer class="page-footer container" role="contentinfo">
+    <p>&copy; 2025 Lagos Early Learning Review — <a href="#">Terms</a> • <a href="#">Privacy</a></p>
+    <address id="author" style="font-style:normal;margin-top:.5rem">Editorial office — Lagos, Nigeria</address>
+  </footer>
+
+</body>
+</html>
